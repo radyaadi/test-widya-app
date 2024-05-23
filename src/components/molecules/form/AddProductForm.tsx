@@ -28,17 +28,14 @@ export default function AddProductForm({
 
   const onSubmit = async (data: any) => {
     try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/product`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          body: JSON.stringify({ author, ...data }),
+      const response = await fetch(`http://localhost:5001/product`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
-      );
+        body: JSON.stringify({ author, ...data }),
+      });
 
       const result = await response.json();
 
