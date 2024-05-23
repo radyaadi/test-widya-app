@@ -1,5 +1,5 @@
 export async function getProducts(token: string) {
-  const response = await fetch(`http://localhost:5001/product`, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product`, {
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
@@ -16,12 +16,15 @@ export async function getProducts(token: string) {
 }
 
 export async function getProduct(productId: string, token: string) {
-  const response = await fetch(`http://localhost:5001/product/${productId}`, {
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/product/${productId}`,
+    {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
     },
-  });
+  );
 
   const result = await response.json();
 
@@ -33,12 +36,15 @@ export async function getProduct(productId: string, token: string) {
 }
 
 export async function getUser(userId: string, token: string) {
-  const response = await fetch(`http://localhost:5001/user/${userId}`, {
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/user/${userId}`,
+    {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
     },
-  });
+  );
 
   const result = await response.json();
 
