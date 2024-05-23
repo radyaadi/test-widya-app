@@ -1,8 +1,7 @@
-import EditProductForm from "@/components/molecules/form/EditProductForm";
 import EditProfileForm from "@/components/molecules/form/EditProfileForm";
 import { getUser } from "@/libs/actions/fetch";
 import useCookies from "@/libs/hooks/use-cookies";
-import { ProductProps, UserProps } from "@/libs/interface";
+import { UserProps } from "@/libs/interface";
 import React from "react";
 
 export default async function ProfilePage({
